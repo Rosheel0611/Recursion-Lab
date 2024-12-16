@@ -1,0 +1,39 @@
+December 13, 2024
+This was my progress from today:
+
+const CANVAS_WIDTH = 700
+const CANVAS_HEIGHT = 700
+let fibs = [1,1,2,3,5,8,13,21,34,55,]
+
+
+function setup () {
+  createCanvas (CANVAS_WIDTH, CANVAS_HEIGHT)
+  angleMode(DEGREES)
+  initFibs()
+}
+
+function draw () {
+  background(200)
+  translate(CANVAS_WIDTH/2, CANVAS_HEIGHT/2)
+  
+  for (let i = 0; i < fibs.length; i++) {
+    const fib = fibs[i]
+    rect(0,0,fib,fib)
+    arc(fib, 0, 2*fib, 2*fib, 90, 180)
+    translate(fib,fib)
+    rotate(-90)
+  }
+}
+
+function addFib () {
+  const fibLen = fibs.length
+  
+  fibs.push(fibs[fibLen-1] + fibs[fibLen-2])
+}
+
+function initFibs () {
+  for (let i = 0; i < 100; i++) {
+  //addfib()
+  }
+}
+
